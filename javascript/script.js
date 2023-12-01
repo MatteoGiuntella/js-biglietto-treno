@@ -5,5 +5,28 @@
 // va applicato uno sconto del 40% per gli over 65.
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
-let ciao = prompt('ciao')
-document.writeln ('ciao')
+let kmPercorsi = prompt ('quanti km percorerrai?')
+console.log (kmPercorsi);
+
+let eta = prompt ('quanti hanni hai?')
+console.log (eta)
+
+let PriceKm = 0.21
+
+let ParzialPrice = (kmPercorsi * PriceKm)
+console.log (ParzialPrice)
+
+if (eta < 18){
+
+    ParzialPrice = ( ParzialPrice * 0.8 )
+}
+else if (eta > 65) {
+
+    ParzialPrice = (ParzialPrice * 0.6)
+
+}
+
+ParzialPrice = ParzialPrice.toFixed (2);
+
+document.getElementById('prezzo') .innerHTML = `il tuo prezzo è ${ParzialPrice}£`
+
